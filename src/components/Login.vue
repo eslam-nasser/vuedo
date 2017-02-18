@@ -10,17 +10,23 @@
       </span>
     </div>
     <form v-on:submit="auth($event)">
-		<div class="form-group input_1">
+		<div class="form-group">
 			<div class="label-control">Username</div>
 			<input type="text" class="form-control" v-model="authUser.username" autofocus>
 		</div>
-		<div class="form-group input_2">
+		<div class="form-group">
 			<div class="label-control">Password</div>
 			<input type="password" class="form-control" v-model="authUser.password">
 		</div>
 		<button id="login_btn" class="btn btn-info pull-right">Let me in</button>
     </form>
 	</div><!--/login-form-->
+    <router-link
+        class="btn btn-default btn-block register-btn"
+        :to="{path: '/register' }"
+        >
+        Don't have an account? Signup now
+    </router-link>
   </div>
 </template>
 
@@ -41,8 +47,10 @@ export default {
                 .then(res =>{
                     // console.log(res.body)
                     if( res.body.success === true ){
-                        localStorage.setItem('user_loggedin', true)
-                       this.$router.push('/myBoards')
+                        localStorage.setItem('id_token', res.body.token)
+                        localStorage.setItem('user_id', res.body.user_id)
+                        this.$router.push('/')
+                        // console.log(res.body)
                     }else{
                         console.log('What the hell man!')
                         this.showError = true;
@@ -52,6 +60,11 @@ export default {
         hideError: function(){
             this.showError = false;
         } 
+    },
+    created: function(){
+        localStorage.removeItem('id_token')
+        localStorage.removeItem('user_id')
+        console.log('Old token removed!')
     }
 }
 </script>
@@ -104,5 +117,8 @@ export default {
     top: 11px;
     right: 15px;
 }
-
+.register-btn{
+    width: 400px;
+    margin: 30px auto;
+}
 </style>

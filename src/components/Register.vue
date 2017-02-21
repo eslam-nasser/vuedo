@@ -1,5 +1,9 @@
 <template>
   <div class="register-warpper">
+    <div class="logo">
+        <img src="../assets/logo.svg">
+        <h4>VueDo</h4>
+    </div>
     <!-- Register -->
 	<div class="register-form clearfix">
     <h4>Register</h4>
@@ -52,6 +56,12 @@
 		<button id="register_btn" class="btn btn-info pull-right">Sign me up!</button>
     </form>
 	</div><!--/register-form-->
+    <router-link
+        class="btn btn-default btn-block login-btn"
+        :to="{path: '/login' }"
+        >
+        I have an account, let me in!
+    </router-link>
   </div>
 </template>
 
@@ -98,6 +108,18 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.logo{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    display: flex;
+    align-items: center;
+}
+.logo img{
+    width: 85px;
+    text-align: center
+}
+.logo h4{font-size: 28px}
 .register-form{
     width: 400px;
     margin: 30px auto;
@@ -115,6 +137,10 @@ export default {
     display: block;
     margin-top: 5px;
     color: #FFF;
+}
+.login-btn{
+    width: 400px;
+    margin: 30px auto;
 }
 .help.is-danger, .help-block{
     color: #e74c3c;

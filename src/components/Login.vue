@@ -1,13 +1,17 @@
 <template>
   <div class="login-warpper">
+    <div class="logo">
+        <img src="../assets/logo.svg">
+        <h4>VueDo</h4>
+    </div>
     <!-- Login -->
 	<div class="login-form clearfix">
     <h4>Login</h4>
     <div class="alert alert-danger" v-bind:class="{ 'show-error': showError, 'hide-error': !showError }">
       Wrong username or password!!, you are lost boy?!!
-      <span v-on:click="hideError()">
-          <i class="icon ion-ios-close-empty"></i>
-      </span>
+        <svg height="20" width="20">
+            <circle cx="10" cy="10" r="7" stroke="#ecf0f1" stroke-width="1" fill="none" />
+        </svg>
     </div>
     <form v-on:submit="auth($event)">
 		<div class="form-group">
@@ -54,12 +58,13 @@ export default {
                     }else{
                         console.log('What the hell man!')
                         this.showError = true;
+                        var self = this;
+                        setTimeout(function(){
+                            self.showError = false;
+                        }, 2100);
                     }
                 });
-        },
-        hideError: function(){
-            this.showError = false;
-        } 
+        }
     },
     created: function(){
         localStorage.removeItem('id_token')
@@ -71,6 +76,18 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.logo{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    display: flex;
+    align-items: center;
+}
+.logo img{
+    width: 85px;
+    text-align: center
+}
+.logo h4{font-size: 28px}
 .login-form{
     width: 400px;
     margin: 30px auto;
@@ -121,4 +138,44 @@ export default {
     width: 400px;
     margin: 30px auto;
 }
+svg{
+    position: absolute;
+    top: 17px;
+    right: 10px;
+}
+.alert-danger svg circle{opacity: 0}
+.alert-danger.show-error svg circle{
+  stroke-dashoffset: 50px;
+  stroke-dasharray: 50px;
+  -webkit-animation: loading 2s linear forwards;
+          animation: loading 2s linear forwards;
+}
+@-webkit-keyframes loading {
+  0% {
+    stroke-dashoffset: 50px;
+    opacity: 1
+  }
+  95% {
+    stroke-dashoffset: 0;
+    opacity: 1
+  }
+  100% {
+    opacity: 0
+  }
+}
+
+@keyframes loading {
+  0% {
+    stroke-dashoffset: 50px;
+    opacity: 1
+  }
+  95% {
+    stroke-dashoffset: 0;
+    opacity: 1
+  }
+  100% {
+    opacity: 0
+  }
+}
+
 </style>

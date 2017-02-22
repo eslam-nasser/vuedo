@@ -77,6 +77,9 @@ export default {
             newUser: {}
         }
     },
+    created: function(){
+        window.document.title = 'Register | VueDo'
+    },
     methods:{
         register: function(e){
             e.preventDefault()

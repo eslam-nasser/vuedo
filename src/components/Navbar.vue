@@ -75,10 +75,10 @@ export default {
 .navbar-nav>li>a{
   font-size: 15px;
 }
-.navbar-nav>li>a.router-link-active{
+/*.navbar-nav>li>a.router-link-active{
   color: #ebebeb;
   background-color: #485563;
-}
+}*/
 @media (min-width: 768px){
   .navbar-nav>li>a {
       padding-top: 15px;

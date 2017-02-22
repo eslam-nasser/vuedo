@@ -67,6 +67,7 @@ export default {
         }
     },
     created: function(){
+        window.document.title = 'Login | VueDo'
         localStorage.removeItem('id_token')
         localStorage.removeItem('user_id')
         console.log('Old token removed!')

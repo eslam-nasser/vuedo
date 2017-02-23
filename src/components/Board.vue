@@ -32,15 +32,14 @@
                   <i class="icon ion-close"></i>
                 </div>
             </li>
-            <!--<pre>{{editCard}} </pre>-->
           </draggable>
         </vue-scrollbar>
         <div class="newEntry">
-            <form v-on:submit="addNewCard(todo, $event)">
-              <input type="text" placeholder="Add a card..." v-model="newCard.title">
-              <button class="addCardBtn">Add</button>
-            </form>
-          </div>
+          <form v-on:submit="addNewCard(todo, $event)">
+            <input type="text" placeholder="Add a card..." v-model="newCard.title">
+            <button class="addCardBtn">Add</button>
+          </form>
+        </div>
       </div>
 
 
@@ -214,6 +213,7 @@
 import draggable from 'vuedraggable'
 import VueScrollbar from 'vue2-scrollbar'
 import Navbar from './navbar'
+import * as db from '../db.json'
 require('vue2-scrollbar/dist/style/vue2-scrollbar.css')
 
 export default {
@@ -237,7 +237,6 @@ export default {
   },
   created: function(){
     window.document.title = 'Dashboard | VueDo'
-
     // Check if the user is logged in
     var jwt = localStorage.getItem('id_token')
     if(!jwt) {
@@ -246,14 +245,13 @@ export default {
 
     // Get this user data
     var this_user_id = localStorage.getItem('user_id')
-    this.$http.get('http://localhost:3000/boards/'+this_user_id)
+    this.$http.get(db.db_online+'/boards/'+this_user_id)
       .then((items)=>{
-        this.todo   = items.data.todo
-        this.doing  = items.data.doing
-        this.done   = items.data.done
-        this.later  = items.data.later
-        this.other  = items.data.other 
-        // console.log(items.data)
+        this.todo   = items.data.boards.todo
+        this.doing  = items.data.boards.doing
+        this.done   = items.data.boards.done
+        this.later  = items.data.boards.later
+        this.other  = items.data.boards.other 
       })
   },
   methods:{
@@ -267,7 +265,7 @@ export default {
       }
       // Update the data in database
       var this_user_id = localStorage.getItem('user_id')
-      this.$http.put('http://localhost:3000/boards/'+this_user_id, allBoardData)
+      this.$http.put(db.db_online+'/boards/'+this_user_id, allBoardData)
         .then((items)=>{
           // console.log(items.data)
         })

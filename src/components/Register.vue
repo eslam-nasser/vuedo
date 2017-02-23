@@ -84,7 +84,7 @@ export default {
         register: function(e){
             e.preventDefault()
             // console.log(this.newUser)
-            this.$http.post('http://localhost:3000/users/register', this.newUser)
+            this.$http.post(db.db_online+'/users/register', this.newUser)
                 .then(res =>{
                    if( res.body.success === true ){
                         localStorage.setItem('id_token', res.body.token)

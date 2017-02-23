@@ -35,6 +35,7 @@
 </template>
 
 <script>
+import * as db from '../db.json'
 export default {
     name: 'login',
     data () {
@@ -47,7 +48,7 @@ export default {
         auth: function(e){
             e.preventDefault()
             // console.log(this.authUser)
-            this.$http.post('http://localhost:3000/users/auth', this.authUser)
+            this.$http.post(db.db_online+'/users/auth', this.authUser)
                 .then(res =>{
                     // console.log(res.body)
                     if( res.body.success === true ){

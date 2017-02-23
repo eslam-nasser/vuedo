@@ -1,5 +1,6 @@
 # VueDo - Simple trello clone [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/Eslam-nasser-wd/node-trello-clone-api)
-> Basic trello clone made with Vue JS
+> A simple api for [VueDo](https://github.com/vueture/vueture-cli) (Basic trello clone made with Vue JS)
+
 
 [<img width="60" align="middle" src="https://cdn.rawgit.com/gilbarbara/logos/e7b1dc2666c3dabe6c1276abd0a767b6ebd6af43/logos/nodejs-icon.svg">](https://nodejs.org)
 [<img width="60" align="middle" src="https://d1xwtr0qwr70yv.cloudfront.net/assets/tech/vue-35f1f4f83e07663deb9028292e603206.svg">](https://nodejs.org)
@@ -22,11 +23,11 @@ Yes, that's it. Only two commands!
 
 If you still think that's too much effort, you could also run:
 ``` bash
-$ npm i && npm run dev
+$ npm i && npm start
 ```
 But yeah, this will basically do the same as `npm install`.
 
-Now the app auto open in a new browser window at `http://localhost:8080/#/`, or what ever is the configs you made
+Now the app is running at `http://localhost:3000`, or what ever is the configs you made
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
@@ -38,4 +39,4 @@ This app made by [Eslam nasser](https://www.facebook.com/Eslam.nasser.yousef)
 Contributions, questions and comments are all welcome and encouraged. For code contributions submit a pull request with unit test.
 
 ## License
-This project is licensed under the [MIT License](https://en.wikipedia.org/wiki/MIT_License)
+This project is licensed under the [MIT License](https://github.com/KunalKapadia/express-mongoose-es6-rest-api/blob/master/LICENSE)

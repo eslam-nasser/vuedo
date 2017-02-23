@@ -30,3 +30,13 @@ But yeah, this will basically do the same as `npm install`.
 Now the app is running at `http://localhost:3000`, or what ever is the configs you made
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+## Author
+This app made by [Eslam nasser](https://www.facebook.com/Eslam.nasser.yousef)
+
+## Contributing
+
+Contributions, questions and comments are all welcome and encouraged. For code contributions submit a pull request with unit test.
+
+## License
+This project is licensed under the [MIT License](https://github.com/KunalKapadia/express-mongoose-es6-rest-api/blob/master/LICENSE)

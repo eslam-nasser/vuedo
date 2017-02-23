@@ -23,11 +23,11 @@ Yes, that's it. Only two commands!
 
 If you still think that's too much effort, you could also run:
 ``` bash
-$ npm i && npm start
+$ npm i && npm run dev
 ```
 But yeah, this will basically do the same as `npm install`.
 
-Now the app is running at `http://localhost:3000`, or what ever is the configs you made
+Now the app will auto open in a new browser window at `http://localhost:8080/#/`, or what ever is the configs you made
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 

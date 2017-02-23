@@ -1,5 +1,5 @@
 # VueDo - Simple trello clone [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/Eslam-nasser-wd/node-trello-clone-api)
-> A simple api for [VueDo](https://github.com/vueture/vueture-cli) (Basic trello clone made with Vue JS)
+> Basic trello clone made with Vue,node,express and mongo
 
 
 [<img width="60" align="middle" src="https://cdn.rawgit.com/gilbarbara/logos/e7b1dc2666c3dabe6c1276abd0a767b6ebd6af43/logos/nodejs-icon.svg">](https://nodejs.org)

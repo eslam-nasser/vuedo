@@ -1,4 +1,4 @@
 {
-    "db_online": "https://vuedo-api.herokuapp.com",
-    "db_local": "http://localhost:3000"
+
+    "db_online": "http://localhost:3000"
 }
